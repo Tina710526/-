@@ -2,21 +2,19 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>失眠檔案｜月球失眠管理局</title><link rel="stylesheet" href="../assets/css/style.css">
+  <meta name="theme-color" content="#e8ddff"><meta name="description" content="月球失眠管理局，收錄地球人深夜睡不著的奇妙理由。">
+  <title>案件檔案室｜月球失眠管理局</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../assets/js/config.js"></script><script src="../assets/js/supabase-client.js"></script>
+  <script defer src="../assets/js/main.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="../index.html"><span class="brand-moon">☾</span><span>月球失眠管理局<small>MOONLIGHT INSOMNIA DEPARTMENT</small></span></a>
-    <button class="menu-toggle" aria-label="開啟選單" aria-expanded="false">☰</button>
-    <nav class="nav"><a href="../index.html">月球總部</a><a class="active" href="archive.html">失眠檔案</a><a href="submit.html">提交案件</a><a href="about.html">關於管理局</a></nav>
-  </header>
-  <main class="page-main">
-    <div class="page-intro"><p class="eyebrow">✦ THE INSOMNIA ARCHIVE ✦</p><h1>失眠檔案室</h1><p>請保持安靜，裡面的案件有些正在睡覺。</p></div>
-    <div class="archive-tools"><input id="search-input" type="search" placeholder="搜尋你的失眠理由，例如：泡麵、前任、黑歷史…"><select id="severity-filter"><option value="all">所有事件等級</option><option value="low">一級・小小清醒</option><option value="mid">二級・翻來覆去</option><option value="high">三級・徹底失眠</option></select></div>
-    <div class="case-grid" id="archive-cases"></div>
-    <p class="empty-state" id="empty-state" hidden>目前沒有找到案件。可能它已經睡著了。☁️</p>
-  </main>
-  <footer class="footer"><span>☾ 月球失眠管理局</span><span>檔案室開放時間：永遠的夜晚</span></footer>
-  <script src="../assets/js/main.js"></script>
-</body>
-</html>
+<header class="site-header"><a class="brand" href="../index.html">🌙 月球失眠管理局<span>MOONLIGHT INSOMNIA DEPARTMENT</span></a>
+<nav class="nav"><a href="../index.html">首頁</a><a href="../pages/archive.html">案件檔案室</a><a href="../pages/submit.html">提交案件</a><a href="../pages/about.html">關於管理局</a><a href="../pages/admin.html">管理員入口</a></nav></header>
+
+<main class="container"><div class="section-heading"><p class="eyebrow">CLASSIFIED NIGHT FILES</p><h1>案件檔案室</h1><p>以下案件均已通過月球管理局審核，待審案件不會出現在這裡。</p><p id="archive-count" class="hint">正在清點卷宗……</p></div>
+<div class="toolbar"><input id="case-search" type="search" placeholder="搜尋案件關鍵字……" aria-label="搜尋案件"><select id="case-filter" aria-label="案件分類"><option value="">所有分類</option><option>腦內劇場</option><option>深夜嘴饞</option><option>科技成癮</option><option>人生哲學</option><option>神祕事件</option><option>其他</option></select></div>
+<div id="case-list" class="case-list" aria-live="polite"><p class="loading">正在連線月球檔案室……</p></div></main>
+<footer class="site-footer">月球失眠管理局・地球時間 <span id="year"></span><br>若今晚睡不著，請記得：你不是唯一還醒著的人。🌙</footer>
+</body></html>

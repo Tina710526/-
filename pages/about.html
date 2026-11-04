@@ -2,25 +2,18 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>關於管理局｜月球失眠管理局</title><link rel="stylesheet" href="../assets/css/style.css">
+  <meta name="theme-color" content="#e8ddff"><meta name="description" content="月球失眠管理局，收錄地球人深夜睡不著的奇妙理由。">
+  <title>關於管理局｜月球失眠管理局</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../assets/js/config.js"></script><script src="../assets/js/supabase-client.js"></script>
+  <script defer src="../assets/js/main.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="../index.html"><span class="brand-moon">☾</span><span>月球失眠管理局<small>MOONLIGHT INSOMNIA DEPARTMENT</small></span></a>
-    <button class="menu-toggle" aria-label="開啟選單" aria-expanded="false">☰</button>
-    <nav class="nav"><a href="../index.html">月球總部</a><a href="archive.html">失眠檔案</a><a href="submit.html">提交案件</a><a class="active" href="about.html">關於管理局</a></nav>
-  </header>
-  <main class="page-main">
-    <div class="page-intro"><p class="eyebrow">✦ ABOUT THE DEPARTMENT ✦</p><h1>我們是誰？</h1><p>一群住在月球背面、對人類腦袋充滿好奇的小傢伙。</p></div>
-    <section class="about-story"><div class="about-illustration">🐰　🌙　👻</div><div><h2>成立於某個睡不著的晚上</h2><p>很久很久以前，月兔局長發現地球每到深夜，就會有大量人類盯著天花板、反覆翻身，或突然想起十年前的尷尬往事。</p><p>為了避免宇宙夜間頻道被「啊啊啊我怎麼會講那句話」的腦內廣播塞滿，月球失眠管理局就此成立。</p><p>我們不保證能讓你立刻入睡，但希望你知道：偶爾睡不著、想太多，並不代表你很奇怪。你只是人類，而人類真的很有戲。</p></div></section>
-    <h2 class="center-heading">月球夜班工作團隊</h2>
-    <div class="team-grid">
-      <article class="team-card"><div>🐰</div><h3>月兔局長</h3><p>總是很有精神，除非現在是白天。</p><small>職務：局長／蓋章專家</small></article>
-      <article class="team-card"><div>⭐</div><h3>星星郵差</h3><p>負責把晚安送到地球，但常常迷路。</p><small>職務：夜間郵務</small></article>
-      <article class="team-card"><div>👻</div><h3>黑眼圈幽靈</h3><p>資深熬夜者，沒人知道牠何時下班。</p><small>職務：三級案件處理</small></article>
-    </div>
-  </main>
-  <footer class="footer"><span>☾ 月球失眠管理局</span><span>本局相信：每個夜晚都值得一點溫柔。</span></footer>
-  <script src="../assets/js/main.js"></script>
-</body>
-</html>
+<header class="site-header"><a class="brand" href="../index.html">🌙 月球失眠管理局<span>MOONLIGHT INSOMNIA DEPARTMENT</span></a>
+<nav class="nav"><a href="../index.html">首頁</a><a href="../pages/archive.html">案件檔案室</a><a href="../pages/submit.html">提交案件</a><a href="../pages/about.html">關於管理局</a><a href="../pages/admin.html">管理員入口</a></nav></header>
+
+<main class="container"><div class="section-heading"><p class="eyebrow">ABOUT THE DEPARTMENT</p><h1>關於月球失眠管理局</h1><p>我們位於月球背面，辦公室在一朵不太準時的雲上。</p></div>
+<div class="info-card"><h2>成立宗旨</h2><p>收錄人類深夜睡不著的荒謬理由，讓每個清醒的夜晚都能被理解、被記錄，也被溫柔地看待。</p><h2>案件公開制度</h2><p>所有訪客投稿會先進入待審核區。管理員審核通過後，案件才會出現在公開檔案室。請勿提交他人的個人資料或敏感資訊。</p><h2>局內守則</h2><ul><li>不嘲笑真正受失眠困擾的人。</li><li>不公開待審核或遭退回的案件。</li><li>不把任何人的秘密拿去餵黑洞。</li><li>每個人都值得一個安心休息的夜晚。</li></ul></div></main>
+<footer class="site-footer">月球失眠管理局・地球時間 <span id="year"></span><br>若今晚睡不著，請記得：你不是唯一還醒著的人。🌙</footer>
+</body></html>

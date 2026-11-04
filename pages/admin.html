@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e8ddff"><meta name="description" content="月球失眠管理局，收錄地球人深夜睡不著的奇妙理由。">
+  <title>管理員後台｜月球失眠管理局</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../assets/js/config.js"></script><script src="../assets/js/supabase-client.js"></script>
+  <script defer src="../assets/js/main.js"></script>
+</head>
+<body>
+<header class="site-header"><a class="brand" href="../index.html">🌙 月球失眠管理局<span>MOONLIGHT INSOMNIA DEPARTMENT</span></a>
+<nav class="nav"><a href="../index.html">首頁</a><a href="../pages/archive.html">案件檔案室</a><a href="../pages/submit.html">提交案件</a><a href="../pages/about.html">關於管理局</a><a href="../pages/admin.html">管理員入口</a></nav></header>
+
+<main class="container"><div class="section-heading"><p class="eyebrow">RESTRICTED AREA</p><h1>🌙 管理員審核室</h1><p>僅限已登記的管理員登入。訪客不得自行取得審核權限。</p></div>
+<form id="admin-login" class="form-card" style="max-width:520px;margin:auto">
+<h2>管理員登入</h2><div class="field"><label for="admin-email-input">電子郵件</label><input id="admin-email-input" type="email" autocomplete="username" required></div>
+<div class="field"><label for="admin-password">密碼</label><input id="admin-password" type="password" autocomplete="current-password" required></div>
+<div id="login-notice" class="notice" role="status" hidden></div><button class="button" type="submit">登入管理局</button>
+<p class="hint">此頁不提供註冊功能。請使用已建立並登記於 admins 名單的帳號。</p></form>
+<section id="admin-panel" hidden><div class="admin-top"><div><h2>歡迎回來，月兔局長</h2><p class="hint">登入帳號：<span id="admin-email"></span></p></div><button id="admin-logout" class="button secondary">登出</button></div>
+<div class="toolbar"><select id="admin-status-filter" aria-label="案件狀態"><option value="pending">待審核案件</option><option value="approved">已公開案件</option><option value="rejected">已退回案件</option></select><button id="admin-refresh" class="button secondary">重新整理</button></div>
+<div id="admin-case-list" class="case-list" aria-live="polite"></div></section></main>
+<footer class="site-footer">月球失眠管理局・地球時間 <span id="year"></span><br>若今晚睡不著，請記得：你不是唯一還醒著的人。🌙</footer>
+</body></html>

@@ -2,30 +2,28 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>提交案件｜月球失眠管理局</title><link rel="stylesheet" href="../assets/css/style.css">
+  <meta name="theme-color" content="#e8ddff"><meta name="description" content="月球失眠管理局，收錄地球人深夜睡不著的奇妙理由。">
+  <title>提交案件｜月球失眠管理局</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../assets/js/config.js"></script><script src="../assets/js/supabase-client.js"></script>
+  <script defer src="../assets/js/main.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="../index.html"><span class="brand-moon">☾</span><span>月球失眠管理局<small>MOONLIGHT INSOMNIA DEPARTMENT</small></span></a>
-    <button class="menu-toggle" aria-label="開啟選單" aria-expanded="false">☰</button>
-    <nav class="nav"><a href="../index.html">月球總部</a><a href="archive.html">失眠檔案</a><a class="active" href="submit.html">提交案件</a><a href="about.html">關於管理局</a></nav>
-  </header>
-  <main class="page-main">
-    <div class="page-intro"><p class="eyebrow">✦ REPORT YOUR BRAIN ✦</p><h1>我要舉報我的大腦</h1><p>放心，這裡不會批評你。畢竟局長昨天也為了想像中的對話失眠。</p></div>
-    <div class="form-layout">
-      <form class="report-form" id="report-form">
-        <label>案件名稱 <span>必填</span><input name="title" required maxlength="36" placeholder="例如：突然想起國小時跌倒的事"></label>
-        <label>事件描述 <span>必填</span><textarea name="description" required maxlength="240" rows="4" placeholder="請描述你的大腦做了什麼奇怪的事…"></textarea></label>
-        <label>失眠程度<select name="severity"><option value="low">一級：有點睡不著</option><option value="mid">二級：翻來覆去</option><option value="high">三級：天亮了還醒著</option></select></label>
-        <label>你希望局裡怎麼處理？<input name="treatment" maxlength="80" placeholder="例如：請派一隻兔兔來把我的腦袋關機"></label>
-        <button class="button primary" type="submit">送交月球總部 ✦</button>
-        <p class="form-hint">這是課堂展示用的前端互動，提交內容會在畫面上產生案件回條，不會上傳到伺服器。</p>
-      </form>
-      <aside class="form-aside"><div class="aside-moon">🌙</div><h2>案件提交須知</h2><ul><li>請誠實面對自己的腦內小劇場。</li><li>禁止提交已經睡著的案件。</li><li>本局不提供醫療診斷或治療。</li><li>若你長期受到失眠困擾，請尋求專業協助。</li></ul><p>「你的腦袋很努力，只是努力的方向有點奇怪。」— 月兔局長</p></aside>
-    </div>
-    <div class="receipt" id="receipt" hidden aria-live="polite"></div>
-  </main>
-  <footer class="footer"><span>☾ 月球失眠管理局</span><span>每一份奇怪，都值得被溫柔收件</span></footer>
-  <script src="../assets/js/main.js"></script>
-</body>
-</html>
+<header class="site-header"><a class="brand" href="../index.html">🌙 月球失眠管理局<span>MOONLIGHT INSOMNIA DEPARTMENT</span></a>
+<nav class="nav"><a href="../index.html">首頁</a><a href="../pages/archive.html">案件檔案室</a><a href="../pages/submit.html">提交案件</a><a href="../pages/about.html">關於管理局</a><a href="../pages/admin.html">管理員入口</a></nav></header>
+
+<main class="container"><div class="section-heading"><p class="eyebrow">NEW CASE REGISTRATION</p><h1>提交失眠案件</h1><p>請如實描述你的清醒原因。局長可能會點頭，也可能會先泡一杯月光茶。</p></div>
+<form id="case-form" class="form-card">
+<div class="field"><label for="title">案件標題 *</label><input id="title" name="title" maxlength="100" required placeholder="例如：MOON-??? 凌晨兩點突然想起國小糗事"></div>
+<div class="field"><label for="category">案件分類</label><select id="category" name="category"><option>腦內劇場</option><option>深夜嘴饞</option><option>科技成癮</option><option>人生哲學</option><option>神祕事件</option><option>其他</option></select></div>
+<div class="field"><label for="severity">清醒程度</label><select id="severity" name="severity"><option value="mild">微微清醒</option><option value="medium">精神抖擻</option><option value="severe">月球常住居民</option></select></div>
+<div class="field"><label for="description">失眠原因 *</label><textarea id="description" name="description" maxlength="2000" required placeholder="請描述今晚發生了什麼事……"></textarea></div>
+<div class="field"><label for="result">目前調查結果（選填）</label><textarea id="result" name="result" maxlength="1000" placeholder="例如：發現只是肚子餓。"></textarea></div>
+<div class="field"><label for="treatment">希望管理局如何處置（選填）</label><textarea id="treatment" name="treatment" maxlength="1000" placeholder="例如：派一隻睡眠精靈來關掉我的腦內投影機。"></textarea></div>
+<div class="field"><label for="note">補充備註（選填）</label><input id="note" name="note" maxlength="500" placeholder="其他想告訴局長的話"></div>
+<p class="hint">送出後案件會先保存為「待審核」，只有通過審核才會公開。請勿填寫密碼、電話、住址等敏感個資。</p>
+<div id="submit-notice" class="notice" role="status" hidden></div><button class="button" type="submit">提交給月球管理局</button>
+</form></main>
+<footer class="site-footer">月球失眠管理局・地球時間 <span id="year"></span><br>若今晚睡不著，請記得：你不是唯一還醒著的人。🌙</footer>
+</body></html>
